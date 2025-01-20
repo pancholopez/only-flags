@@ -3,7 +3,4 @@
       <PackageReference Include="MediatR" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" />
     </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Application\" />
-    </ItemGroup>
 </Project>

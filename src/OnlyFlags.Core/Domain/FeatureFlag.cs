@@ -10,5 +10,5 @@ public class FeatureFlag : Entity<Guid>
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation Property
-    public ICollection<FeatureFlagAudit> Audits { get; set; } = new List<FeatureFlagAudit>();
+    public ICollection<FeatureFlagAudit> Audits { get; set; } = [];
 }

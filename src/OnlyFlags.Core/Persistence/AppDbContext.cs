@@ -8,5 +8,11 @@ public abstract class AppDbContext<T>(DbContextOptions<T> options) : DbContext(o
     public DbSet<FeatureFlag> FeatureFlags => Set<FeatureFlag>();
     public DbSet<FeatureFlagAudit> FeatureFlagAudits => Set<FeatureFlagAudit>();
 
-    public new abstract void OnModelCreating(ModelBuilder modelBuilder);
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+        ConfigureModel(modelBuilder);
+    }
+    
+    protected abstract void ConfigureModel(ModelBuilder modelBuilder);
 }

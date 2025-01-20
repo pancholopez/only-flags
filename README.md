@@ -63,7 +63,7 @@ cat .\secrets.json | dotnet user-secrets set --project .\tests\[PROJECT_NAME].In
 dotnet user-secrets list --project .\tests\[PROJECT_NAME].IntegrationTests\
 
 # if you made a mistake and want to reset all secrets
-dotnet user-secrets clear --project .\tests\[PROJECT_NAME].IntegrationTests\
+dotnet user-secrets clear --project .\tests\[PROJECT_NAME].IntegrationTests\ 
 ```
 
 ### Restore Dependencies, Build, and Run
@@ -108,6 +108,29 @@ Simulate user interactions to verify end-to-end functionality.
 
 ```shell
 dotnet test --filter TestCategory=Acceptance --logger "console;verbosity=normal"
+```
+
+## Database
+
+Make sure your project has the latest dependencies
+
+```shell
+dotnet add package Microsoft.EntityFrameworkCore.Sqlite
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+```
+
+Add, Remove or Apply DB migrations
+
+```shell
+# to add a new migration
+dotnet ef migrations add initialCreate --project .\src\App.Data\
+
+# to rollback the latest migration
+dotnet ef migrations remove --project .\src\App.Data\
+
+# to apply all pending migrations
+dotnet ef database update
 ```
 
 ## Versions

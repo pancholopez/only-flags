@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyFlags.UnitTests", "test
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyFlags.Core", "src\OnlyFlags.Core\OnlyFlags.Core.csproj", "{91B66C60-2D80-4A88-8958-0C4CD8AEBD37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OnlyFlags.Persistence.Sqlite", "src\OnlyFlags.Persistence.Sqlite\OnlyFlags.Persistence.Sqlite.csproj", "{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,6 +24,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{FB030F3D-3BD3-47AD-8BA2-B26C020E997A} = {1D6DEFBB-ACE6-4EF7-9F4E-FE98B01397CE}
 		{91B66C60-2D80-4A88-8958-0C4CD8AEBD37} = {087236AF-935E-4C9E-8971-E7EB0859D08B}
+		{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C} = {087236AF-935E-4C9E-8971-E7EB0859D08B}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{FB030F3D-3BD3-47AD-8BA2-B26C020E997A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -32,5 +35,9 @@ Global
 		{91B66C60-2D80-4A88-8958-0C4CD8AEBD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91B66C60-2D80-4A88-8958-0C4CD8AEBD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91B66C60-2D80-4A88-8958-0C4CD8AEBD37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3397DF44-6D1B-478D-B77D-4BB0C82C8B1C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -66,7 +66,7 @@ public class FeatureFlagFacade(IAppDbContext dbContext) : IFeatureFlagProvider, 
 
         featureFlag.Enabled = enabled;
 
-        dbContext.FeatureFlagAudits.Add(new FeatureFlagAudit
+        dbContext.FeatureFlagAudit.Add(new FeatureFlagAudit
         {
             FeatureFlagId = featureFlag.Id,
             ChangedBy = Guid.Empty,

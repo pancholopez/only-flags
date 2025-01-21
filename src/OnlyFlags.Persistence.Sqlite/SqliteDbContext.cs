@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using OnlyFlags.Core.Persistence;
 
@@ -11,9 +12,17 @@ public class SqliteDbContext(DbContextOptions<SqliteDbContext> options) : AppDbC
     }
 }
 
-public static class ServicesRegistrationExtensions
+public static class ServicesCollectionExtensions
 {
-    public static IServiceCollection AddSqliteDbContext(this IServiceCollection services, string? connectionString)
+    public static IServiceCollection AddOnlyFlagsSqliteDbContext(this IServiceCollection services,
+        IConfiguration configuration)
+    {
+        var connectionString = configuration.GetConnectionString("Sqlite");
+        return services.AddOnlyFlagsSqliteDbContext(connectionString);
+    }
+
+    public static IServiceCollection AddOnlyFlagsSqliteDbContext(this IServiceCollection services,
+        string? connectionString)
     {
         if (string.IsNullOrEmpty(connectionString))
             throw new ArgumentNullException(nameof(connectionString));

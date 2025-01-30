@@ -28,10 +28,11 @@ public static class ServicesCollectionExtensions
             throw new ArgumentNullException(nameof(connectionString));
 
         // todo: register db context factory ??
+        services.AddDbContext<SqliteDbContext>(options =>
+            options.UseSqlite(connectionString,
+                x => x.MigrationsAssembly(typeof(SqliteDbContext).Assembly.FullName)));
         services
-            .AddDbContext<IAppDbContext, SqliteDbContext>(options =>
-                options.UseSqlite(connectionString,
-                    x => x.MigrationsAssembly(typeof(SqliteDbContext).Assembly.FullName)));
+            .AddScoped<AppDbContext<SqliteDbContext>>(provider => provider.GetRequiredService<SqliteDbContext>());
 
         return services;
     }

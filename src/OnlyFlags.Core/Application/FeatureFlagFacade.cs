@@ -17,7 +17,7 @@ public interface IFeatureFlagManager
     public Task UpdateFeatureFlagAsync(Guid featureId, bool enabled);
 }
 
-public class FeatureFlagFacade(IAppDbContext dbContext) : IFeatureFlagProvider, IFeatureFlagManager
+public class FeatureFlagFacade(AppDbContext<DbContext> dbContext) : IFeatureFlagProvider, IFeatureFlagManager
 {
     private readonly ConcurrentDictionary<string, bool> _cache = new();
 

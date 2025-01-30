@@ -3,16 +3,7 @@ using OnlyFlags.Core.Domain;
 
 namespace OnlyFlags.Core.Persistence;
 
-public interface IAppDbContext
-{
-    DbSet<FeatureFlag> FeatureFlags { get; }
-    DbSet<FeatureFlagAudit> FeatureFlagAudit { get; }
-
-    Task<int> SaveChangesAsync(CancellationToken ct = new());
-}
-
-public abstract class AppDbContext<T>(DbContextOptions<T> options)
-    : DbContext(options), IAppDbContext where T : DbContext
+public abstract class AppDbContext<T>(DbContextOptions<T> options) : DbContext(options) where T: DbContext
 {
     public DbSet<FeatureFlag> FeatureFlags => Set<FeatureFlag>();
     public DbSet<FeatureFlagAudit> FeatureFlagAudit => Set<FeatureFlagAudit>();

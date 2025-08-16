@@ -137,6 +137,24 @@ dotnet ef database update
 
 - [Latest Stable Release](https://[REPOSITORY_URL]/commits/branch/release/CurrentStable)
 
+## Dev Containers
+
+This repository includes a Dev Container configuration for a ready-to-code environment using .NET 9 and SQLite.
+
+Getting started:
+
+1. Install Visual Studio Code and the "Dev Containers" extension (ms-vscode-remote.remote-containers), or use GitHub Codespaces.
+2. Open the repository in VS Code.
+3. When prompted, "Reopen in Container". VS Code will build the image and install dependencies.
+4. After the container is ready, run:
+   - `dotnet restore only-flags.sln` (runs automatically on first create)
+   - `dotnet build only-flags.sln`
+   - `dotnet test` to run tests
+
+Notes:
+- The container is based on `mcr.microsoft.com/devcontainers/dotnet:1-9.0-bookworm` and includes SQLite.
+- Environment variables `DOTNET_CLI_TELEMETRY_OPTOUT` and `DOTNET_NOLOGO` are set in the container.
+
 ## How to Contribute
 
 Follow these steps:
